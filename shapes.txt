@@ -1,0 +1,4 @@
+circle 20 5 true 3
+rectangle 20 5 green false 4 5
+triangle 50 15 red true 6 8
+line 24 19 green false 42 17
