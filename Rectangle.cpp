@@ -86,3 +86,12 @@ Shape* Rectangle::create(int x, int y, const string& color, bool fill, stringstr
 
     return new Rectangle(x, y, color, fill, w, h);
 }
+
+void Rectangle::edit(std::stringstream& ss) {
+    int w, h;
+    if (ss >> w >> h) {
+        setWidth(w);
+        setHeight(h);
+    }
+    else cout << "Wrong input format" << endl;
+}

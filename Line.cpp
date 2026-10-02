@@ -80,3 +80,12 @@ Shape* Line::create(int x, int y, const string& color, bool /*fill*/, stringstre
 
     return new Line(x, y, color, X2, Y2);
 }
+
+void Line::edit(std::stringstream& ss) {
+    int x2, y2;
+    if (ss >> x2 >> y2) {
+        setX2(x2);
+        setY2(y2);
+    }
+    else cout << "Wrong input format" << endl;
+}

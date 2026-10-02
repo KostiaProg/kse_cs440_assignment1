@@ -65,3 +65,9 @@ Shape* Circle::create(int x, int y, const string& color, bool fill, stringstream
 
     return new Circle(x, y, color, fill, r);
 }
+
+void Circle::edit(std::stringstream& ss) {
+    int r;
+    if (ss >> r) setRadius(r);
+    else cout << "Wrong input format" << endl;
+}

@@ -85,3 +85,12 @@ Shape* Triangle::create(int x, int y, const string& color, bool fill, stringstre
 
     return new Triangle(x, y, color, fill, b, h);
 }
+
+void Triangle::edit(std::stringstream& ss) {
+    int b, h;
+    if (ss >> b >> h) {
+        setBase(b);
+        setHeight(h);
+    }
+    else cout << "Wrong input format" << endl;
+}

@@ -17,6 +17,7 @@ public:
     void draw(std::vector<std::vector<char>>& canvas) const override;
     std::string info() const override;
     std::string saveInfo() const override;
+    void edit(std::stringstream& ss) override;
 
     int getRadius() const;
     void setRadius(int r);

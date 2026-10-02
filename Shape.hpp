@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <sstream>
 
 class Shape {
 protected:
@@ -20,6 +21,7 @@ public:
     virtual void draw(std::vector<std::vector<char>>& canvas) const = 0;
     virtual std::string info() const;
     virtual std::string saveInfo() const = 0;
+    virtual void edit(std::stringstream& ss) = 0;
 
     // getters / setters
     int getX() const;

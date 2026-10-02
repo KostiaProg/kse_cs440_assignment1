@@ -109,42 +109,13 @@ void Blackboard::move(int x, int y) {
     }
 }
 
-void Blackboard::editParams(stringstream& stream) {
+void Blackboard::editParams(stringstream& ss) {
     if (selectedShape_id == -1) {
         cout << "No shape selected" << endl;
         return;
     }
 
-    if (auto* tria = dynamic_cast<Triangle*>(shapes[selectedShape_id])) {
-        int b, h;
-        if (stream >> b >> h) {
-            tria->setBase(b);
-            tria->setHeight(h);
-        } else cout << "Wrong input format" << endl;
-    }
-    else if (auto* rect = dynamic_cast<Rectangle*>(shapes[selectedShape_id])) {
-        int w, h;
-        if (stream >> w >> h) {
-            rect->setWidth(w);
-            rect->setHeight(h);
-        } else cout << "Wrong input format" << endl;
-    }
-    else if (auto* circ = dynamic_cast<Circle*>(shapes[selectedShape_id])) {
-        int r;
-        if (stream >> r) {
-            circ->setRadius(r);
-        } else cout << "Wrong input format" << endl;
-    }
-    else if (auto* line = dynamic_cast<Line*>(shapes[selectedShape_id])) {
-        int x2, y2;
-        if (stream >> x2 >> y2) {
-            line->setX2(x2);
-            line->setY2(y2);
-        } else cout << "Wrong input format" << endl;
-    }
-    else {
-        cout << "Wrong input format" << endl;
-    }
+    shapes[selectedShape_id]->edit(ss);
 }
 
 void Blackboard::select(int id) {

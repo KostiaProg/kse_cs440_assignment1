@@ -25,4 +25,5 @@ public:
     void setHeight(int h);
 
     static Shape* create(int x, int y, const std::string& color, bool fill, std::stringstream& ss);
+    virtual void edit(std::stringstream& ss) override;
 };

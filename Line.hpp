@@ -16,6 +16,7 @@ public:
     void draw(std::vector<std::vector<char>>& canvas) const override;
     std::string info() const override;
     std::string saveInfo() const override;
+    void edit(std::stringstream& ss) override;
 
     int getX2() const;
     int getY2() const;
