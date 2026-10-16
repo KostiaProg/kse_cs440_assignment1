@@ -71,3 +71,9 @@ void Circle::edit(std::stringstream& ss) {
     if (ss >> r) setRadius(r);
     else cout << "Wrong input format" << endl;
 }
+
+bool Circle::isPointInBounds(int px, int py) const {
+    int lx = px-x;
+    int ly = py-y;
+    return lx*lx + ly*ly <= radius*radius;
+}

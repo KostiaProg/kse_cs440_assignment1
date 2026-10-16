@@ -22,6 +22,7 @@ public:
     virtual std::string info() const;
     virtual std::string saveInfo() const = 0;
     virtual void edit(std::stringstream& ss) = 0;
+    virtual bool isPointInBounds(int px, int py) const = 0;
 
     // getters / setters
     int getX() const;

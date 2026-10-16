@@ -19,6 +19,7 @@ public:
     std::string info() const override;
     std::string saveInfo() const override;
     void edit(std::stringstream& ss) override;
+    bool isPointInBounds(int px, int py) const override;
 
     int getWidth() const;
     int getHeight() const;

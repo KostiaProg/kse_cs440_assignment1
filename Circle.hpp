@@ -5,7 +5,6 @@
 class Circle : public Shape {
 private:
     int radius;
-
 public:
     Circle();
     Circle(int r);
@@ -18,6 +17,7 @@ public:
     std::string info() const override;
     std::string saveInfo() const override;
     void edit(std::stringstream& ss) override;
+    bool isPointInBounds(int px, int py) const override;
 
     int getRadius() const;
     void setRadius(int r);

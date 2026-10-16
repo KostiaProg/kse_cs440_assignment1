@@ -127,9 +127,9 @@ void Blackboard::select(int id) {
 
 void Blackboard::select(int x, int y) {
     bool found = false;
-    for (size_t i = 0; i < shapes.size(); ++i) {
+    for (int i = shapes.size()-1; i >= 0; --i) {
         if (!shapes[i]) continue;
-        if (shapes[i]->getX() == x && shapes[i]->getY() == y) {
+        if (shapes[i]->isPointInBounds(x, y)) {
             selectedShape_id = static_cast<int>(i);
             found = true;
             break;

@@ -89,3 +89,34 @@ void Line::edit(std::stringstream& ss) {
     }
     else cout << "Wrong input format" << endl;
 }
+
+bool Line::isPointInBounds(int px, int py) const {
+    int x0 = x;
+    int y0 = y;
+    int x1 = x2;
+    int y1 = y2;
+
+    int dx = abs(x1 - x0);
+    int dy = abs(y1 - y0);
+    int sx = (x0 < x1) ? 1 : -1;
+    int sy = (y0 < y1) ? 1 : -1;
+    int err = dx - dy;
+
+    while (true) {
+        if (x0 == px && y0 == py) return true;
+
+        if (x0 == x1 && y0 == y1) break;
+
+        int e2 = 2 * err;
+        if (e2 > -dy) {
+            err -= dy;
+            x0 += sx;
+        }
+        if (e2 < dx) {
+            err += dx;
+            y0 += sy;
+        }
+    }
+
+    return false;
+}

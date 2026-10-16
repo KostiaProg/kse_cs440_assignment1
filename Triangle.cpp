@@ -94,3 +94,19 @@ void Triangle::edit(std::stringstream& ss) {
     }
     else cout << "Wrong input format" << endl;
 }
+
+bool Triangle::isPointInBounds(int px, int py) const {
+    if (py < y || py >= y + height) return false;
+
+    // what row are we
+    int i = py - y;
+
+    int currentWidth;
+    if (height == 1) currentWidth = base;
+    else currentWidth = 1 + (base - 1) * i / (height - 1);
+
+    int left  = x - currentWidth / 2;
+    int right = left + currentWidth - 1;
+
+    return px >= left && px <= right;
+}

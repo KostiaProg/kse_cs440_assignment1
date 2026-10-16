@@ -95,3 +95,7 @@ void Rectangle::edit(std::stringstream& ss) {
     }
     else cout << "Wrong input format" << endl;
 }
+
+bool Rectangle::isPointInBounds(int px, int py) const {
+    return px <= width && px >= x && py <= height && py >= y;
+}

@@ -18,6 +18,7 @@ public:
     void draw(std::vector<std::vector<char>>& canvas) const override;
     std::string info() const override;
     std::string saveInfo() const override;
+    bool isPointInBounds(int px, int py) const override;
 
     int getBase() const;
     int getHeight() const;
